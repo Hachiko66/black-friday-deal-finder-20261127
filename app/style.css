@@ -1,0 +1,145 @@
+/* DealHunt styles — one file, no frameworks, no web fonts. */
+:root {
+  --ink: #1c2333;
+  --muted: #5a6373;
+  --paper: #f7f3ea;
+  --card: #ffffff;
+  --line: #e3dcc9;
+  --navy: #14213d;
+  --gold: #f4a900;
+  --red: #c1121f;
+  --green: #1d7a3d;
+  --amber: #8a5a00;
+  --blue: #145da0;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+.wrap { max-width: 1160px; margin: 0 auto; padding: 0 20px; }
+
+/* Masthead */
+.masthead { background: var(--navy); color: #fff; padding: 34px 0 30px; }
+.brand {
+  display: inline-block;
+  margin: 0 0 10px;
+  padding: 4px 12px;
+  border: 2px solid var(--gold);
+  border-radius: 999px;
+  color: var(--gold);
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+.masthead h1 { margin: 0 0 8px; font-size: 40px; line-height: 1.1; }
+.tagline { margin: 0 0 16px; font-size: 18px; color: #d7deeb; max-width: 640px; }
+.stats { margin: 0; display: flex; flex-wrap: wrap; gap: 10px 26px; }
+.stats span { font-size: 15px; color: #d7deeb; }
+.stats strong { color: var(--gold); font-size: 20px; margin-right: 4px; }
+
+/* Best deals strip */
+.best { margin: 26px 0 6px; }
+.best h2, .compare h2, .method h2 { font-size: 22px; margin: 0 0 10px; }
+#best-list {
+  list-style: none; margin: 0; padding: 0;
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px;
+}
+#best-list li {
+  background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+  padding: 12px; display: flex; flex-direction: column; gap: 4px;
+}
+.rank {
+  width: 26px; height: 26px; border-radius: 50%;
+  background: var(--gold); color: var(--navy);
+  font-weight: 800; text-align: center; line-height: 26px; font-size: 14px;
+}
+.bname { font-weight: 700; font-size: 14px; line-height: 1.3; }
+.bpct { color: var(--red); font-weight: 800; font-size: 20px; }
+.bprice { color: var(--muted); font-size: 14px; }
+.bprice s { color: #9aa1ad; }
+
+/* Controls */
+.controls {
+  margin: 22px 0 8px; padding: 16px;
+  background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+  display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 1fr; gap: 12px;
+  position: sticky; top: 0; z-index: 10;
+  box-shadow: 0 4px 14px rgba(20, 33, 61, .12);
+}
+.field label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 4px; color: var(--muted); }
+.field input, .field select {
+  width: 100%; padding: 10px 12px; font: inherit; font-size: 15px;
+  border: 1px solid #c9c2ae; border-radius: 8px; background: #fff; color: var(--ink);
+}
+.field input:focus, .field select:focus { outline: 3px solid var(--gold); outline-offset: 1px; }
+.count { font-weight: 700; margin: 14px 0 4px; }
+.empty { background: #fff3cd; border: 1px solid #e6c87a; border-radius: 8px; padding: 12px; }
+
+/* Deal grid */
+.grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
+  margin: 10px 0 30px;
+}
+.card {
+  background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+  padding: 16px; display: flex; flex-direction: column;
+}
+.card-top { display: flex; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
+.tag {
+  font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--blue); background: #e3eefb; border-radius: 999px; padding: 3px 9px;
+}
+.sig { font-size: 11px; font-weight: 800; letter-spacing: .05em; border-radius: 999px; padding: 4px 9px; white-space: nowrap; }
+.sig-new-low { color: #fff; background: var(--green); }
+.sig-strong { color: #fff; background: var(--blue); }
+.sig-routine { color: #fff; background: #7a6a53; }
+.card h3 { margin: 0 0 4px; font-size: 17px; line-height: 1.3; }
+.store { margin: 0 0 10px; color: var(--muted); font-weight: 600; font-size: 14px; }
+.prices { margin: 0 0 2px; display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.sale { font-size: 28px; font-weight: 800; color: var(--red); }
+.usual { font-size: 16px; color: #9aa1ad; text-decoration: line-through; }
+.pct { font-size: 16px; font-weight: 800; color: #fff; background: var(--red); border-radius: 6px; padding: 2px 8px; }
+.save { margin: 0 0 10px; font-weight: 700; color: var(--green); font-size: 14px; }
+.ev { margin: 0 0 10px; font-size: 14px; color: #39415a; flex: 1; }
+.meta { margin: 0 0 12px; font-size: 12px; color: var(--muted); }
+.buy {
+  display: block; text-align: center; padding: 11px;
+  background: var(--navy); color: #fff; font-weight: 700; text-decoration: none;
+  border-radius: 8px;
+}
+.buy:hover, .buy:focus { background: #0c1a30; outline: 3px solid var(--gold); }
+
+/* Comparison + method */
+.compare { margin-bottom: 30px; }
+.note { color: var(--muted); margin: 0 0 12px; }
+.compare-group { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px; margin-bottom: 12px; }
+.compare-group h3 { margin: 0 0 8px; font-size: 17px; }
+.compare table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.compare th, .compare td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--line); }
+.compare th { color: var(--muted); font-size: 13px; text-transform: uppercase; letter-spacing: .05em; }
+.compare .num { font-weight: 800; color: var(--red); white-space: nowrap; }
+.method {
+  background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+  padding: 20px; margin-bottom: 30px;
+}
+.method p { margin: 0 0 10px; }
+.method p:last-child { margin-bottom: 0; }
+footer { padding: 0 20px 34px; color: var(--muted); font-size: 13px; }
+
+/* Phone layout */
+@media (max-width: 900px) {
+  #best-list { grid-template-columns: repeat(2, 1fr); }
+  .grid { grid-template-columns: repeat(2, 1fr); }
+  .controls { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px) {
+  .masthead h1 { font-size: 30px; }
+  .grid { grid-template-columns: 1fr; }
+  #best-list { grid-template-columns: 1fr; }
+  .controls { grid-template-columns: 1fr; }
+  .compare table { font-size: 13px; }
+}
